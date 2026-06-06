@@ -6,10 +6,10 @@
  */
 
 // intent: Public-facing site URL. Used for canonical URLs, sitemap, OG tags.
-// Set NEXT_PUBLIC_SITE_URL in Vercel project settings once the domain is live.
-// TODO: confirm production domain.
+// Override with NEXT_PUBLIC_SITE_URL in Vercel if the production domain changes
+// (e.g. to a www. or apex variant).
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://tekton.example.com"
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://tektonsoftware.com"
 ).replace(/\/$/, "");
 
 export const site = {
