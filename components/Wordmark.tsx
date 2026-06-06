@@ -11,7 +11,7 @@ export function Wordmark({ className }: { className?: string }) {
     <Link
       href="/"
       className={cn(
-        "text-accent-text focus-visible:outline-ring rounded-sm text-lg font-semibold tracking-tight focus-visible:outline-2 focus-visible:outline-offset-2",
+        "text-accent-text focus-visible:outline-ring rounded-sm text-xl font-semibold tracking-tight focus-visible:outline-2 focus-visible:outline-offset-2",
         className
       )}
       aria-label="Tekton — home"
