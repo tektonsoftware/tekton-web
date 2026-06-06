@@ -30,6 +30,7 @@ export const pricing = {
       upfront: "$18,000",
       monthly: "$1,500/mo",
       priceTodo: true,
+      highlighted: false,
       cta: { label: "Book a demo", href: "/demo" },
       includes: [
         "Tekton Core — small appliance SKU",
@@ -73,6 +74,7 @@ export const pricing = {
       upfront: "$60,000",
       monthly: "$4,000/mo",
       priceTodo: true,
+      highlighted: false,
       cta: { label: "Book a demo", href: "/demo" },
       includes: [
         "Everything in Mid, plus:",
