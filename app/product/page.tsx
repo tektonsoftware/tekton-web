@@ -46,14 +46,14 @@ export default function ProductPage() {
                 <div>
                   <SectionLabel>{pillar.name}</SectionLabel>
                   {pillar.featured && (
-                    <span className="ml-3 inline-flex rounded-full border border-accent px-2.5 py-0.5 align-middle text-xs font-medium text-accent-text">
+                    <span className="border-accent text-accent-text ml-3 inline-flex rounded-full border px-2.5 py-0.5 align-middle text-xs font-medium">
                       Headline feature
                     </span>
                   )}
                   <h2 className="mt-4 text-2xl font-semibold tracking-tight sm:text-3xl">
                     {pillar.claim}
                   </h2>
-                  <p className="mt-4 leading-relaxed text-muted-foreground">
+                  <p className="text-muted-foreground mt-4 leading-relaxed">
                     {pillar.body}
                   </p>
                   <CheckList className="mt-8" items={pillar.capabilities} />

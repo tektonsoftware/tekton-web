@@ -30,7 +30,7 @@ export default function DemoPage() {
               {demo.scheduler.heading}
             </h2>
             {/* TODO: paste Cal.com / Calendly embed; remove this placeholder. */}
-            <div className="mt-6 flex min-h-64 items-center justify-center rounded-[var(--radius-base)] border border-dashed border-border bg-muted p-8 text-center text-sm text-muted-foreground">
+            <div className="border-border bg-muted text-muted-foreground mt-6 flex min-h-64 items-center justify-center rounded-[var(--radius-base)] border border-dashed p-8 text-center text-sm">
               {demo.scheduler.note}
             </div>
           </div>

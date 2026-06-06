@@ -11,14 +11,18 @@ export function buildMetadata({
   title,
   description,
   path = "/",
+  titleAbsolute = false,
 }: {
   title: string;
   description: string;
   path?: string;
+  // The home page is in the same segment as the root layout, so the title
+  // template does not apply to it — pass titleAbsolute to set the full title.
+  titleAbsolute?: boolean;
 }): Metadata {
   const url = `${SITE_URL}${path}`;
   return {
-    title,
+    title: titleAbsolute ? { absolute: title } : title,
     description,
     alternates: { canonical: url },
     // og:image / twitter:image are supplied by the file-based conventions

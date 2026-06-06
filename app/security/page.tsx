@@ -47,7 +47,7 @@ export default function SecurityPage() {
               <h2 className="mt-4 text-2xl font-semibold tracking-tight sm:text-3xl">
                 {security.architecture.heading}
               </h2>
-              <p className="mt-4 leading-relaxed text-muted-foreground">
+              <p className="text-muted-foreground mt-4 leading-relaxed">
                 {security.architecture.body}
               </p>
             </div>
@@ -66,11 +66,11 @@ export default function SecurityPage() {
             <h2 className="mt-4 text-2xl font-semibold tracking-tight sm:text-3xl">
               {security.dataFlow.heading}
             </h2>
-            <p className="mt-4 leading-relaxed text-muted-foreground">
+            <p className="text-muted-foreground mt-4 leading-relaxed">
               {security.dataFlow.body}
             </p>
           </div>
-          <Figure className="mx-auto mt-10 max-w-3xl bg-card">
+          <Figure className="bg-card mx-auto mt-10 max-w-3xl">
             <DataFlowDiagram />
           </Figure>
         </SectionReveal>
@@ -89,7 +89,7 @@ export default function SecurityPage() {
             {security.controls.items.map((item) => (
               <Card key={item.title} className="p-6">
                 <h3 className="font-semibold tracking-tight">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                <p className="text-muted-foreground mt-2 text-sm leading-relaxed">
                   {item.body}
                 </p>
               </Card>
@@ -105,14 +105,14 @@ export default function SecurityPage() {
             <Card className="p-8">
               <div className="flex items-center gap-3">
                 <SectionLabel>{security.compliance.eyebrow}</SectionLabel>
-                <span className="inline-flex rounded-full border border-accent px-2.5 py-0.5 text-xs font-medium text-accent-text">
+                <span className="border-accent text-accent-text inline-flex rounded-full border px-2.5 py-0.5 text-xs font-medium">
                   {security.compliance.status}
                 </span>
               </div>
               <h2 className="mt-4 text-2xl font-semibold tracking-tight">
                 {security.compliance.heading}
               </h2>
-              <p className="mt-4 leading-relaxed text-muted-foreground">
+              <p className="text-muted-foreground mt-4 leading-relaxed">
                 {security.compliance.body}
               </p>
             </Card>
@@ -122,12 +122,15 @@ export default function SecurityPage() {
               <h2 className="mt-4 text-2xl font-semibold tracking-tight">
                 {security.founder.heading}
               </h2>
-              <p className="mt-4 flex-1 leading-relaxed text-muted-foreground">
+              <p className="text-muted-foreground mt-4 flex-1 leading-relaxed">
                 {security.founder.body}
               </p>
               <Link
                 href={security.founder.cta.href}
-                className={cn(buttonVariants({ variant: "ghost" }), "mt-6 w-fit px-0 hover:bg-transparent hover:underline")}
+                className={cn(
+                  buttonVariants({ variant: "ghost" }),
+                  "mt-6 w-fit px-0 hover:bg-transparent hover:underline"
+                )}
               >
                 {security.founder.cta.label}
                 <span aria-hidden="true">&rarr;</span>

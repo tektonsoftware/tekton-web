@@ -42,7 +42,7 @@ export function ExcludeList({
             strokeWidth="2"
             strokeLinecap="round"
             aria-hidden="true"
-            className="mt-0.5 shrink-0 text-muted-foreground"
+            className="text-muted-foreground mt-0.5 shrink-0"
           >
             <line x1="5" y1="12" x2="19" y2="12" />
           </svg>
@@ -65,7 +65,7 @@ function CheckIcon() {
       strokeLinecap="round"
       strokeLinejoin="round"
       aria-hidden="true"
-      className="mt-0.5 shrink-0 text-accent-text"
+      className="text-accent-text mt-0.5 shrink-0"
     >
       <path d="M20 6 9 17l-5-5" />
     </svg>

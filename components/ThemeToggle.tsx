@@ -25,7 +25,7 @@ export function ThemeToggle({ className }: { className?: string }) {
           : "Toggle theme"
       }
       className={cn(
-        "inline-flex h-9 w-9 items-center justify-center rounded-[var(--radius-base)] border border-border text-foreground transition-colors hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring",
+        "border-border text-foreground hover:bg-muted focus-visible:outline-ring inline-flex h-9 w-9 items-center justify-center rounded-[var(--radius-base)] border transition-colors focus-visible:outline-2 focus-visible:outline-offset-2",
         className
       )}
     >

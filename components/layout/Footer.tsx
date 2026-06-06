@@ -8,9 +8,12 @@ import { cn } from "@/lib/utils";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border" aria-labelledby="footer-cta-heading">
+    <footer
+      className="border-border border-t"
+      aria-labelledby="footer-cta-heading"
+    >
       {/* Footer CTA — repeats the single demo ask. */}
-      <div className="border-b border-border bg-muted">
+      <div className="border-border bg-muted border-b">
         <Container className="flex flex-col items-start gap-6 py-16 md:flex-row md:items-center md:justify-between">
           <div className="max-w-xl">
             <h2
@@ -19,7 +22,7 @@ export function Footer() {
             >
               {site.footerCta.heading}
             </h2>
-            <p className="mt-2 text-muted-foreground">{site.footerCta.body}</p>
+            <p className="text-muted-foreground mt-2">{site.footerCta.body}</p>
           </div>
           <Link
             href={site.cta.href}
@@ -34,7 +37,7 @@ export function Footer() {
       <Container className="grid grid-cols-2 gap-8 py-12 sm:grid-cols-4">
         <div className="col-span-2 sm:col-span-1">
           <Wordmark />
-          <p className="mt-3 max-w-xs text-sm text-muted-foreground">
+          <p className="text-muted-foreground mt-3 max-w-xs text-sm">
             {site.tagline}
           </p>
         </div>
@@ -44,7 +47,7 @@ export function Footer() {
         <FooterColumn label="Legal" links={site.footer.legal} />
       </Container>
 
-      <Container className="flex flex-col gap-2 border-t border-border py-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+      <Container className="border-border text-muted-foreground flex flex-col gap-2 border-t py-6 text-sm sm:flex-row sm:items-center sm:justify-between">
         <p>
           &copy; {COPYRIGHT_YEAR} {site.legalName}. All rights reserved.
         </p>
@@ -69,7 +72,7 @@ function FooterColumn({
           <li key={link.href}>
             <Link
               href={link.href}
-              className="rounded-sm text-sm text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+              className="text-muted-foreground hover:text-foreground focus-visible:outline-ring rounded-sm text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2"
             >
               {link.label}
             </Link>

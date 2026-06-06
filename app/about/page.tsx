@@ -34,7 +34,7 @@ export default function AboutPage() {
                 Fixed aspect-ratio box keeps layout stable (no CLS) in the meantime.
               */}
               <div
-                className="flex aspect-[4/5] w-full items-center justify-center rounded-[var(--radius-base)] border border-dashed border-border bg-muted text-sm text-muted-foreground"
+                className="border-border bg-muted text-muted-foreground flex aspect-[4/5] w-full items-center justify-center rounded-[var(--radius-base)] border border-dashed text-sm"
                 role="img"
                 aria-label={about.founder.photoAlt}
               >
@@ -43,8 +43,8 @@ export default function AboutPage() {
               <p className="mt-4 font-semibold tracking-tight">
                 {about.founder.name}
               </p>
-              <p className="text-sm text-accent-text">{about.founder.role}</p>
-              <p className="mt-1 text-sm text-muted-foreground">
+              <p className="text-accent-text text-sm">{about.founder.role}</p>
+              <p className="text-muted-foreground mt-1 text-sm">
                 {about.founder.location}
               </p>
             </div>
@@ -69,7 +69,7 @@ export default function AboutPage() {
             <h2 className="mt-4 font-serif text-3xl font-medium tracking-tight sm:text-4xl">
               {about.thesis.heading}
             </h2>
-            <div className="mt-6 space-y-5 leading-relaxed text-muted-foreground">
+            <div className="text-muted-foreground mt-6 space-y-5 leading-relaxed">
               {about.thesis.body.map((para) => (
                 <p key={para}>{para}</p>
               ))}

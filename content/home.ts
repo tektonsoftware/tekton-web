@@ -26,7 +26,8 @@ export const home = {
   // hero pillar; Core and Shield frame it. Connect is introduced on the Product page.
   pillars: {
     eyebrow: "What you get",
-    heading: "An appliance, a verified answer engine, and the controls to govern it.",
+    heading:
+      "An appliance, a verified answer engine, and the controls to govern it.",
     items: [
       {
         name: "Tekton Core",

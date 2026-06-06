@@ -14,13 +14,13 @@ export function Figure({
   return (
     <figure
       className={cn(
-        "rounded-[var(--radius-base)] border border-border bg-muted/40 p-6",
+        "border-border bg-muted/40 rounded-[var(--radius-base)] border p-6",
         className
       )}
     >
       {children}
       {caption && (
-        <figcaption className="mt-4 text-center text-sm text-muted-foreground">
+        <figcaption className="text-muted-foreground mt-4 text-center text-sm">
           {caption}
         </figcaption>
       )}

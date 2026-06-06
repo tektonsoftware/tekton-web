@@ -39,10 +39,10 @@ export function DemoForm() {
     return (
       <div
         role="status"
-        className="rounded-[var(--radius-base)] border border-accent bg-muted p-8"
+        className="border-accent bg-muted rounded-[var(--radius-base)] border p-8"
       >
         <h3 className="text-lg font-semibold tracking-tight">{successTitle}</h3>
-        <p className="mt-2 text-muted-foreground">{successBody}</p>
+        <p className="text-muted-foreground mt-2">{successBody}</p>
       </div>
     );
   }
@@ -66,7 +66,9 @@ export function DemoForm() {
               id={field.name}
               name={field.name}
               required={field.required}
-              placeholder={"placeholder" in field ? field.placeholder : undefined}
+              placeholder={
+                "placeholder" in field ? field.placeholder : undefined
+              }
             />
           ) : field.kind === "select" ? (
             <Select
@@ -91,24 +93,32 @@ export function DemoForm() {
               name={field.name}
               type="text"
               required={field.required}
-              autoComplete={"autoComplete" in field ? field.autoComplete : undefined}
-              placeholder={"placeholder" in field ? field.placeholder : undefined}
+              autoComplete={
+                "autoComplete" in field ? field.autoComplete : undefined
+              }
+              placeholder={
+                "placeholder" in field ? field.placeholder : undefined
+              }
             />
           )}
         </div>
       ))}
 
       {status === "error" && (
-        <p role="alert" className="text-sm text-accent-text">
+        <p role="alert" className="text-accent-text text-sm">
           {errorBody}
         </p>
       )}
 
-      <Button type="submit" disabled={status === "submitting"} className="w-full sm:w-auto">
+      <Button
+        type="submit"
+        disabled={status === "submitting"}
+        className="w-full sm:w-auto"
+      >
         {status === "submitting" ? "Sending…" : submitLabel}
       </Button>
 
-      <p className="text-sm text-muted-foreground">{demo.privacyNote}</p>
+      <p className="text-muted-foreground text-sm">{demo.privacyNote}</p>
     </form>
   );
 }

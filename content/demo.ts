@@ -38,7 +38,13 @@ export const demo = {
       "Something went wrong sending that. Please try again, or email us directly.",
     // intent: Form fields. `kind` selects the input type the component renders.
     fields: [
-      { name: "name", label: "Name", kind: "text", required: true, autoComplete: "name" },
+      {
+        name: "name",
+        label: "Name",
+        kind: "text",
+        required: true,
+        autoComplete: "name",
+      },
       {
         name: "company",
         label: "Company",
@@ -58,13 +64,7 @@ export const demo = {
         label: "Company size",
         kind: "select",
         required: true,
-        options: [
-          "1–10",
-          "11–50",
-          "51–200",
-          "201–500",
-          "500+",
-        ],
+        options: ["1–10", "11–50", "51–200", "201–500", "500+"],
       },
       {
         name: "dataUse",

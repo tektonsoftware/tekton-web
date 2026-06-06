@@ -34,7 +34,7 @@ export default function PricingPage() {
               key={tier.name}
               className={cn(
                 "flex h-full flex-col p-7",
-                tier.highlighted && "border-accent ring-1 ring-accent"
+                tier.highlighted && "border-accent ring-accent ring-1"
               )}
             >
               <div className="flex items-center justify-between">
@@ -42,12 +42,14 @@ export default function PricingPage() {
                   {tier.name}
                 </h2>
                 {tier.highlighted && (
-                  <span className="inline-flex rounded-full border border-accent px-2.5 py-0.5 text-xs font-medium text-accent-text">
+                  <span className="border-accent text-accent-text inline-flex rounded-full border px-2.5 py-0.5 text-xs font-medium">
                     Most common
                   </span>
                 )}
               </div>
-              <p className="mt-2 text-sm text-muted-foreground">{tier.tagline}</p>
+              <p className="text-muted-foreground mt-2 text-sm">
+                {tier.tagline}
+              </p>
 
               {/* Price block — provisional figures flagged for editing. */}
               <div className="mt-6">
@@ -55,13 +57,15 @@ export default function PricingPage() {
                   <span className="text-3xl font-semibold tracking-tight">
                     {tier.upfront}
                   </span>
-                  <span className="text-sm text-muted-foreground">up-front</span>
+                  <span className="text-muted-foreground text-sm">
+                    up-front
+                  </span>
                 </div>
-                <div className="mt-1 text-sm text-muted-foreground">
+                <div className="text-muted-foreground mt-1 text-sm">
                   + {tier.monthly}
                 </div>
                 {tier.priceTodo && (
-                  <p className="mt-2 text-xs font-medium uppercase tracking-wide text-accent-text">
+                  <p className="text-accent-text mt-2 text-xs font-medium tracking-wide uppercase">
                     {/* TODO: confirm pricing before launch */}
                     TODO — provisional pricing
                   </p>
@@ -99,7 +103,7 @@ export default function PricingPage() {
           ))}
         </div>
 
-        <p className="mt-8 max-w-3xl text-sm text-muted-foreground">
+        <p className="text-muted-foreground mt-8 max-w-3xl text-sm">
           {pricing.footnote}
         </p>
       </Section>
@@ -117,7 +121,7 @@ export default function PricingPage() {
             {pricing.everyTier.items.map((item) => (
               <div key={item.title}>
                 <h3 className="font-semibold tracking-tight">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                <p className="text-muted-foreground mt-2 text-sm leading-relaxed">
                   {item.body}
                 </p>
               </div>

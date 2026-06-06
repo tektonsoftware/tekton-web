@@ -15,14 +15,14 @@ export function PageHero({
   children?: React.ReactNode;
 }) {
   return (
-    <section className="border-b border-border py-16 sm:py-20 lg:py-24">
+    <section className="border-border border-b py-16 sm:py-20 lg:py-24">
       <Container className="max-w-3xl">
         <SectionLabel>{eyebrow}</SectionLabel>
         <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
           {headline}
         </h1>
         {subhead && (
-          <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+          <p className="text-muted-foreground mt-6 text-lg leading-relaxed">
             {subhead}
           </p>
         )}

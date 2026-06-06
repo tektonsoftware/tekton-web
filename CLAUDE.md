@@ -36,8 +36,8 @@ This is an early-stage marketing site. The scaffold (chrome, design system, layo
 Defined entirely in `app/globals.css` (Tailwind v4 `@theme inline` + CSS custom properties) — there is no JS config file. Key conventions:
 
 - **Use semantic token utilities, not raw colors.** `bg-background`, `text-foreground`, `text-muted-foreground`, `bg-accent`, `text-accent-text`, `border-border`, etc. These are CSS variables mapped into the Tailwind theme. Never use Tailwind palette colors like `bg-green-700` directly.
-- **`accent-text` vs `accent-foreground`:** `accent-foreground` is text *on* an accent background; `accent-text` is accent-colored text on a normal background (it shifts lighter in dark mode for AA contrast). They are not interchangeable.
-- **Dark mode is a designed palette, not an inversion.** Class-based (`.dark` on `<html>`, toggled by next-themes). Both palettes are hand-tuned in `:root` and `.dark`. Adding a color means adding it to *both* blocks and to the `@theme inline` map.
+- **`accent-text` vs `accent-foreground`:** `accent-foreground` is text _on_ an accent background; `accent-text` is accent-colored text on a normal background (it shifts lighter in dark mode for AA contrast). They are not interchangeable.
+- **Dark mode is a designed palette, not an inversion.** Class-based (`.dark` on `<html>`, toggled by next-themes). Both palettes are hand-tuned in `:root` and `.dark`. Adding a color means adding it to _both_ blocks and to the `@theme inline` map.
 - **`--radius-base`** (0.5rem) is the standard corner radius — use `rounded-[var(--radius-base)]`.
 - Fonts: Geist Sans (body, `--font-sans`) and Newsreader (serif accents only, `--font-serif`), wired up in `app/layout.tsx`.
 - Accessibility is load-bearing: skip link, `:focus-visible` ring, `prefers-reduced-motion` handling (the `.reveal` animation collapses to nothing under reduced motion). Keep focus-ring and reduced-motion behavior intact.

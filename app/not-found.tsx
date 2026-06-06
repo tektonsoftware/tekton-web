@@ -10,9 +10,9 @@ export default function NotFound() {
       <h1 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
         That page isn&apos;t here.
       </h1>
-      <p className="mt-4 text-muted-foreground">
-        The link may be out of date. Head back home, or book a demo and we&apos;ll
-        take it from there.
+      <p className="text-muted-foreground mt-4">
+        The link may be out of date. Head back home, or book a demo and
+        we&apos;ll take it from there.
       </p>
       <div className="mt-8 flex flex-col gap-3 sm:flex-row">
         <Link href="/" className={buttonVariants({ variant: "outline" })}>

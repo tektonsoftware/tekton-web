@@ -40,7 +40,8 @@ export const product = {
       id: "connect",
       name: "Tekton Connect",
       // intent: Connect's claim — meets you where your documents already live.
-      claim: "Pre-built connectors for the sources your documents already live in.",
+      claim:
+        "Pre-built connectors for the sources your documents already live in.",
       body: "Tekton Connect ingests from the systems your team already uses. Indexing runs on the appliance, so the originals stay where they are and the index stays on your network.",
       diagram: "connect",
       featured: false,
@@ -74,7 +75,8 @@ export const product = {
       id: "shield",
       name: "Tekton Shield",
       // intent: Shield's claim — the governance story a CISO needs to hear.
-      claim: "The compliance and audit layer that lets your reviewers sign off.",
+      claim:
+        "The compliance and audit layer that lets your reviewers sign off.",
       body: "Tekton Shield is the governance surface around the system: who can see what, what happened, and a record of it all. The architecture is reviewed and signed by a CISSP, and SOC 2 work is underway.",
       diagram: "shield",
       featured: false,

@@ -18,7 +18,7 @@ export function Header() {
   React.useEffect(() => setOpen(false), [pathname]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur-sm">
+    <header className="border-border bg-background/85 sticky top-0 z-50 border-b backdrop-blur-sm">
       <Container>
         <nav
           className="flex h-16 items-center justify-between gap-4"
@@ -36,7 +36,7 @@ export function Header() {
                   href={item.href}
                   aria-current={active ? "page" : undefined}
                   className={cn(
-                    "rounded-[var(--radius-base)] px-3 py-2 text-sm transition-colors hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring",
+                    "hover:bg-muted focus-visible:outline-ring rounded-[var(--radius-base)] px-3 py-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2",
                     active ? "text-foreground" : "text-muted-foreground"
                   )}
                 >
@@ -59,7 +59,7 @@ export function Header() {
             </Link>
             <button
               type="button"
-              className="inline-flex h-9 w-9 items-center justify-center rounded-[var(--radius-base)] border border-border text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring md:hidden"
+              className="border-border text-foreground focus-visible:outline-ring inline-flex h-9 w-9 items-center justify-center rounded-[var(--radius-base)] border focus-visible:outline-2 focus-visible:outline-offset-2 md:hidden"
               aria-expanded={open}
               aria-controls="mobile-menu"
               aria-label={open ? "Close menu" : "Open menu"}
@@ -88,13 +88,13 @@ export function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <div id="mobile-menu" className="border-t border-border md:hidden">
+        <div id="mobile-menu" className="border-border border-t md:hidden">
           <Container className="flex flex-col gap-1 py-4">
             {site.nav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-[var(--radius-base)] px-3 py-2 text-sm text-foreground hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                className="text-foreground hover:bg-muted focus-visible:outline-ring rounded-[var(--radius-base)] px-3 py-2 text-sm focus-visible:outline-2 focus-visible:outline-offset-2"
               >
                 {item.label}
               </Link>
