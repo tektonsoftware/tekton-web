@@ -21,19 +21,19 @@ export function buildMetadata({
     title,
     description,
     alternates: { canonical: url },
+    // og:image / twitter:image are supplied by the file-based conventions
+    // (app/opengraph-image.tsx + app/twitter-image.tsx).
     openGraph: {
       type: "website",
       siteName: "Tekton — Private AI",
       title,
       description,
       url,
-      images: [{ url: "/og-default.png", width: 1200, height: 630, alt: title }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: ["/og-default.png"],
     },
   };
 }
