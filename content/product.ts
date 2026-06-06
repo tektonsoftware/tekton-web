@@ -27,6 +27,7 @@ export const product = {
       claim: "The appliance that runs your AI without an internet connection.",
       body: "Tekton Core is the hardware and base software stack. It arrives configured for your firm's size and installs inside your network. Once it's on, it does not need — and is not given — a path to the outside world.",
       diagram: "appliance",
+      featured: false,
       capabilities: [
         "Self-contained appliance, sized by firm (see Pricing for SKUs)",
         "Runs entirely offline — no outbound connection required to operate",
@@ -42,6 +43,7 @@ export const product = {
       claim: "Pre-built connectors for the sources your documents already live in.",
       body: "Tekton Connect ingests from the systems your team already uses. Indexing runs on the appliance, so the originals stay where they are and the index stays on your network.",
       diagram: "connect",
+      featured: false,
       capabilities: [
         "Connectors for common file shares, document stores, and email archives",
         "Local indexing — content is processed on the appliance, not in a cloud",
@@ -75,6 +77,7 @@ export const product = {
       claim: "The compliance and audit layer that lets your reviewers sign off.",
       body: "Tekton Shield is the governance surface around the system: who can see what, what happened, and a record of it all. The architecture is reviewed and signed by a CISSP, and SOC 2 work is underway.",
       diagram: "shield",
+      featured: false,
       capabilities: [
         "Role-based access control, integrated with your directory",
         "Complete, tamper-evident audit logs of every query and document touch",
