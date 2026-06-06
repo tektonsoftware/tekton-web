@@ -22,8 +22,11 @@ Grouped by priority. File paths are clickable.
       as a placeholder name. Add the real name, and replace the photo placeholder in
       [app/about/page.tsx](app/about/page.tsx) with a `next/image` (a code comment
       there shows the exact swap). Drop the image in `public/`.
-- [ ] **Legal pages.** The footer links to `/privacy` and `/terms`
-      ([content/site.ts](content/site.ts)) — these routes **don't exist yet and will 404.** Add the pages, or remove the links until they're ready.
+- [ ] **Legal copy review.** `/privacy` and `/terms` now exist with **minimal
+      placeholder copy that has NOT been reviewed by counsel**
+      ([content/legal.ts](content/legal.ts), shown with an honest "not yet reviewed"
+      banner). Replace the body text with reviewed language before launch and bump
+      the `lastUpdated` date.
 
 ## Important (do soon)
 
