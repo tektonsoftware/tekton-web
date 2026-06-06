@@ -34,6 +34,7 @@ export const home = {
         summary:
           "The appliance and base software stack, sized to your firm. It arrives configured, installs on your network, and runs without an internet connection.",
         href: "/product#core",
+        featured: false,
       },
       {
         name: "Tekton Verify",
@@ -49,6 +50,7 @@ export const home = {
         summary:
           "The compliance and audit layer: role-based access, complete audit logs, and an architecture review signed by a CISSP. Built so your auditors have less to ask about.",
         href: "/product#shield",
+        featured: false,
       },
     ],
   },
