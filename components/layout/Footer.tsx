@@ -40,6 +40,12 @@ export function Footer() {
           <p className="text-muted-foreground mt-3 max-w-xs text-sm">
             {site.tagline}
           </p>
+          <a
+            href={`mailto:${site.email}`}
+            className="text-accent-text focus-visible:outline-ring mt-4 inline-block rounded-sm text-sm hover:underline focus-visible:outline-2 focus-visible:outline-offset-2"
+          >
+            {site.email}
+          </a>
         </div>
 
         <FooterColumn label="Product" links={site.footer.product} />

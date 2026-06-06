@@ -28,6 +28,10 @@ export const site = {
 
   founderLocation: "Las Vegas, Nevada",
 
+  // intent: Public contact address. Surfaced in the footer, demo form fallbacks,
+  // and legal pages. Used as the mailto target everywhere we say "contact us".
+  email: "contact@tektonsoftware.com",
+
   // intent: Primary conversion action — repeated verbatim across the site.
   cta: {
     label: "Book a 15-minute demo",

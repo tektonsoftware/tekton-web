@@ -35,7 +35,7 @@ export const demo = {
     successBody:
       "Thanks — we've got your details and will reach out to confirm a time. Nothing you sent leaves our hands.",
     errorBody:
-      "Something went wrong sending that. Please try again, or email us directly.",
+      "Something went wrong sending that. Please try again, or email us at",
     // intent: Form fields. `kind` selects the input type the component renders.
     fields: [
       {

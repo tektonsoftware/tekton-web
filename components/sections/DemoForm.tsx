@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { demo } from "@/content/demo";
+import { site } from "@/content/site";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -43,6 +44,16 @@ export function DemoForm() {
       >
         <h3 className="text-lg font-semibold tracking-tight">{successTitle}</h3>
         <p className="text-muted-foreground mt-2">{successBody}</p>
+        <p className="text-muted-foreground mt-3 text-sm">
+          Prefer email? Reach us at{" "}
+          <a
+            href={`mailto:${site.email}`}
+            className="text-accent-text hover:underline"
+          >
+            {site.email}
+          </a>
+          .
+        </p>
       </div>
     );
   }
@@ -106,7 +117,13 @@ export function DemoForm() {
 
       {status === "error" && (
         <p role="alert" className="text-accent-text text-sm">
-          {errorBody}
+          {errorBody}{" "}
+          <a
+            href={`mailto:${site.email}`}
+            className="underline underline-offset-2"
+          >
+            {site.email}
+          </a>
         </p>
       )}
 
