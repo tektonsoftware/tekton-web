@@ -13,7 +13,7 @@ export const aboutMeta = {
 export const about = {
   hero: {
     eyebrow: "About",
-    headline: "Private AI, built by someone who has to defend it.",
+    headline: "Private AI, built by people who have to defend it.",
     subhead:
       "Tekton is a focused product company in pre-launch, built around a single conviction about where sensitive data belongs.",
   },

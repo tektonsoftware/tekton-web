@@ -29,8 +29,18 @@ export default function HomePage() {
       <section className="border-border border-b py-20 sm:py-28 lg:py-32">
         <Container className="max-w-4xl">
           <SectionLabel>{home.hero.eyebrow}</SectionLabel>
-          <h1 className="mt-5 text-4xl font-semibold tracking-tight sm:text-6xl">
-            {home.hero.headline}
+          <h1 className="mt-5 text-4xl font-semibold tracking-tight text-balance sm:text-6xl">
+            {/* Stack each "Your X." phrase on its own line so the anaphora reads
+                as a column and never breaks mid-phrase. The final phrase is
+                accent-colored to land the value prop. */}
+            {home.hero.headline.match(/[^.]+\./g)?.map((phrase, i, all) => (
+              <span
+                key={phrase}
+                className={cn("block", i === all.length - 1 && "text-accent-text")}
+              >
+                {phrase.trim()}
+              </span>
+            ))}
           </h1>
           <p className="text-muted-foreground mt-6 max-w-2xl text-lg leading-relaxed sm:text-xl">
             {home.hero.subhead}

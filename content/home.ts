@@ -15,7 +15,7 @@ export const home = {
   // proves every answer. The eyebrow names the audience without naming a vertical.
   hero: {
     eyebrow: "Private AI for businesses with sensitive data",
-    headline: "Your data. Your network. Your AI.",
+    headline: "Your Private Data. Your Private Network. Your Private AI.",
     subhead:
       "Tekton is an AI appliance that runs entirely on your premises. Every answer is grounded in your own documents and cites a verified source. Nothing you ingest ever leaves your network.",
     // Primary CTA comes from site.cta. Secondary points to the deal-closing page.
