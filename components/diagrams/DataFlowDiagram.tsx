@@ -4,9 +4,10 @@
  * This is the security page's most important visual.
  */
 export function DataFlowDiagram({ className }: { className?: string }) {
+  const rowY = 172;
   return (
     <svg
-      viewBox="0 0 720 360"
+      viewBox="0 0 800 300"
       className={className}
       role="img"
       aria-labelledby="df-title df-desc"
@@ -23,35 +24,34 @@ export function DataFlowDiagram({ className }: { className?: string }) {
       {/* LAN boundary */}
       <rect
         x="16"
-        y="16"
-        width="528"
-        height="328"
+        y="40"
+        width="512"
+        height="224"
         rx="12"
         fill="none"
         stroke="currentColor"
         strokeWidth="2"
-        strokeDasharray="2 0"
       />
-      <text x="32" y="42" fontSize="13" fontWeight="600" fill="currentColor">
+      <text x="34" y="66" fontSize="13" fontWeight="600" fill="currentColor">
         Your network (LAN)
       </text>
 
       {/* Sources */}
       <g>
         <rect
-          x="48"
+          x="44"
           y="120"
-          width="130"
-          height="120"
+          width="120"
+          height="104"
           rx="8"
           fill="var(--diagram-muted)"
           stroke="currentColor"
           strokeWidth="2"
         />
         <rect
-          x="74"
-          y="146"
-          width="36"
+          x="78"
+          y="148"
+          width="34"
           height="46"
           rx="3"
           fill="none"
@@ -59,9 +59,9 @@ export function DataFlowDiagram({ className }: { className?: string }) {
           strokeWidth="2"
         />
         <rect
-          x="92"
+          x="94"
           y="160"
-          width="36"
+          width="34"
           height="46"
           rx="3"
           fill="var(--diagram-muted)"
@@ -69,8 +69,8 @@ export function DataFlowDiagram({ className }: { className?: string }) {
           strokeWidth="2"
         />
         <text
-          x="113"
-          y="226"
+          x="104"
+          y="246"
           textAnchor="middle"
           fontSize="12"
           fill="currentColor"
@@ -79,42 +79,42 @@ export function DataFlowDiagram({ className }: { className?: string }) {
         </text>
       </g>
 
-      <FlowArrow x1={178} x2={236} y={180} />
+      <FlowArrow x1={164} x2={206} y={rowY} />
 
       {/* Appliance */}
       <g>
         <rect
-          x="240"
+          x="210"
           y="110"
-          width="140"
-          height="140"
+          width="132"
+          height="124"
           rx="8"
           fill="var(--diagram-muted)"
           stroke="currentColor"
           strokeWidth="2"
         />
         <rect
-          x="266"
-          y="138"
-          width="88"
+          x="238"
+          y="142"
+          width="76"
           height="8"
           rx="2"
           fill="currentColor"
         />
         <rect
-          x="266"
-          y="156"
-          width="88"
+          x="238"
+          y="160"
+          width="76"
           height="8"
           rx="2"
           fill="currentColor"
           opacity="0.5"
         />
-        <circle cx="272" cy="182" r="4" fill="currentColor" />
-        <circle cx="288" cy="182" r="4" fill="currentColor" opacity="0.5" />
+        <circle cx="244" cy="188" r="4" fill="currentColor" />
+        <circle cx="260" cy="188" r="4" fill="currentColor" opacity="0.5" />
         <text
-          x="310"
-          y="236"
+          x="276"
+          y="246"
           textAnchor="middle"
           fontSize="12"
           fontWeight="600"
@@ -124,37 +124,37 @@ export function DataFlowDiagram({ className }: { className?: string }) {
         </text>
       </g>
 
-      <FlowArrow x1={380} x2={438} y={180} />
+      <FlowArrow x1={342} x2={384} y={rowY} />
 
       {/* Users */}
       <g>
         <rect
-          x="442"
+          x="388"
           y="120"
-          width="86"
-          height="120"
+          width="104"
+          height="104"
           rx="8"
           fill="var(--diagram-muted)"
           stroke="currentColor"
           strokeWidth="2"
         />
         <circle
-          cx="485"
-          cy="158"
+          cx="440"
+          cy="156"
           r="14"
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
         />
         <path
-          d="M463 200 a22 18 0 0 1 44 0"
+          d="M418 200 a22 17 0 0 1 44 0"
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
         />
         <text
-          x="485"
-          y="226"
+          x="440"
+          y="246"
           textAnchor="middle"
           fontSize="12"
           fill="currentColor"
@@ -163,52 +163,59 @@ export function DataFlowDiagram({ className }: { className?: string }) {
         </text>
       </g>
 
-      {/* Internet, outside the boundary */}
-      <g>
-        <ellipse
-          cx="640"
-          cy="150"
-          rx="60"
-          ry="40"
-          fill="none"
-          stroke="var(--diagram-line)"
-          strokeWidth="2"
-        />
-        <text
-          x="640"
-          y="155"
-          textAnchor="middle"
-          fontSize="13"
-          fill="var(--diagram-line)"
-        >
-          Internet
-        </text>
-      </g>
-
-      {/* Blocked path between LAN and internet */}
+      {/* Attempted path to the internet — drawn faint, then blocked by the sign. */}
       <line
-        x1="544"
-        y1="180"
-        x2="588"
-        y2="160"
+        x1="492"
+        y1={rowY}
+        x2="638"
+        y2={rowY}
         stroke="var(--diagram-line)"
         strokeWidth="2"
-        strokeDasharray="5 5"
+        strokeDasharray="5 6"
       />
-      <g stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-        <line x1="556" y1="160" x2="576" y2="186" />
-        <line x1="576" y1="160" x2="556" y2="186" />
-      </g>
+
+      {/* Internet, outside the boundary */}
+      <ellipse
+        cx="704"
+        cy={rowY}
+        rx="62"
+        ry="44"
+        fill="none"
+        stroke="var(--diagram-line)"
+        strokeWidth="2"
+      />
       <text
-        x="566"
-        y="214"
+        x="704"
+        y={rowY + 5}
         textAnchor="middle"
-        fontSize="12"
-        fontWeight="600"
-        fill="currentColor"
+        fontSize="13"
+        fill="var(--diagram-line)"
       >
-        No data leaves
+        Internet
       </text>
+
+      {/*
+        Prohibition sign on the path to the internet — its fill masks the dashed
+        line beneath. No inline label needed: the section heading ("Nothing leaves
+        the LAN.") and lead paragraph already state the message.
+      */}
+      <circle
+        cx="566"
+        cy={rowY}
+        r="22"
+        fill="var(--card)"
+        stroke="currentColor"
+        strokeWidth="2.5"
+      />
+      <line
+        x1="551"
+        y1={rowY + 15}
+        x2="581"
+        y2={rowY - 15}
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
     </svg>
   );
 }

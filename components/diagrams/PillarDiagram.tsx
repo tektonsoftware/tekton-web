@@ -38,39 +38,45 @@ export function PillarDiagram({
 function Appliance() {
   return (
     <g fill="none" stroke="currentColor" strokeWidth="2">
+      {/* the appliance */}
       <rect
-        x="90"
-        y="50"
-        width="140"
-        height="100"
+        x="60"
+        y="58"
+        width="124"
+        height="84"
         rx="8"
         fill="var(--diagram-muted)"
       />
-      <line x1="112" y1="78" x2="208" y2="78" strokeLinecap="round" />
+      <line x1="82" y1="82" x2="162" y2="82" strokeLinecap="round" />
       <line
-        x1="112"
+        x1="82"
         y1="98"
-        x2="208"
+        x2="162"
         y2="98"
         strokeLinecap="round"
         opacity="0.5"
       />
-      <circle cx="116" cy="124" r="4" fill="currentColor" stroke="none" />
+      <circle cx="88" cy="122" r="4" fill="currentColor" stroke="none" />
       <circle
-        cx="132"
-        cy="124"
+        cx="104"
+        cy="122"
         r="4"
         fill="currentColor"
         stroke="none"
         opacity="0.5"
       />
-      {/* no-cloud mark */}
-      <path d="M250 60 a16 16 0 1 0 0 32 h-4" stroke="var(--diagram-line)" />
+
+      {/* "no internet" — a globe with a slash through it */}
+      <g stroke="var(--diagram-line)">
+        <circle cx="248" cy="100" r="22" />
+        <line x1="226" y1="100" x2="270" y2="100" />
+        <path d="M248 78 a10 22 0 0 0 0 44 a10 22 0 0 0 0 -44" />
+      </g>
       <line
-        x1="238"
-        y1="58"
-        x2="262"
-        y2="94"
+        x1="230"
+        y1="118"
+        x2="266"
+        y2="82"
         stroke="currentColor"
         strokeWidth="2.5"
         strokeLinecap="round"
@@ -82,38 +88,71 @@ function Appliance() {
 function Connect() {
   return (
     <g fill="none" stroke="currentColor" strokeWidth="2">
+      {/* source documents on the left */}
       {[60, 100, 140].map((y, i) => (
-        <rect
-          key={y}
-          x="30"
-          y={y - 14}
-          width="60"
-          height="28"
-          rx="4"
-          fill="var(--diagram-muted)"
-          opacity={1 - i * 0.15}
-        />
+        <g key={y} opacity={1 - i * 0.12}>
+          <rect
+            x="34"
+            y={y - 16}
+            width="52"
+            height="32"
+            rx="4"
+            fill="var(--diagram-muted)"
+          />
+          <line x1="44" y1={y - 4} x2="78" y2={y - 4} strokeLinecap="round" />
+          <line
+            x1="44"
+            y1={y + 6}
+            x2="70"
+            y2={y + 6}
+            strokeLinecap="round"
+            opacity="0.5"
+          />
+        </g>
       ))}
-      <rect
-        x="210"
-        y="66"
-        width="80"
-        height="68"
-        rx="8"
-        fill="var(--diagram-muted)"
-      />
+
+      {/* connectors converging into the appliance */}
       {[60, 100, 140].map((y) => (
         <path
           key={y}
-          d={`M90 ${y} C150 ${y}, 160 100, 210 100`}
+          d={`M86 ${y} C150 ${y}, 156 100, 204 100`}
           stroke="var(--diagram-line)"
         />
       ))}
-      <path
-        d="M256 92 l8 8 l-8 8"
-        stroke="currentColor"
+
+      {/* the appliance, holding the local index */}
+      <rect
+        x="204"
+        y="56"
+        width="92"
+        height="88"
+        rx="8"
+        fill="var(--diagram-muted)"
+      />
+      <line x1="220" y1="80" x2="280" y2="80" strokeLinecap="round" />
+      <line
+        x1="220"
+        y1="96"
+        x2="280"
+        y2="96"
         strokeLinecap="round"
-        strokeLinejoin="round"
+        opacity="0.6"
+      />
+      <line
+        x1="220"
+        y1="112"
+        x2="280"
+        y2="112"
+        strokeLinecap="round"
+        opacity="0.6"
+      />
+      <line
+        x1="220"
+        y1="128"
+        x2="262"
+        y2="128"
+        strokeLinecap="round"
+        opacity="0.6"
       />
     </g>
   );
