@@ -11,7 +11,6 @@ import { buttonVariants } from "@/components/ui/button";
 import { Figure } from "@/components/diagrams/Figure";
 import { DataFlowDiagram } from "@/components/diagrams/DataFlowDiagram";
 import { ArchitectureDiagram } from "@/components/diagrams/ArchitectureDiagram";
-import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = buildMetadata({
   title: securityMeta.title,
@@ -125,16 +124,6 @@ export default function SecurityPage() {
               <p className="text-muted-foreground mt-4 flex-1 leading-relaxed">
                 {security.founder.body}
               </p>
-              <Link
-                href={security.founder.cta.href}
-                className={cn(
-                  buttonVariants({ variant: "ghost" }),
-                  "mt-6 w-fit px-0 hover:bg-transparent hover:underline"
-                )}
-              >
-                {security.founder.cta.label}
-                <span aria-hidden="true">&rarr;</span>
-              </Link>
             </Card>
           </div>
         </SectionReveal>

@@ -7,7 +7,7 @@
 export const aboutMeta = {
   title: "About",
   description:
-    "Tekton is built by a CISSP-credentialed security and DevOps engineer in Las Vegas, on one conviction: businesses with sensitive data shouldn't have to send it to someone else's cloud to use AI.",
+    "Tekton is built in Las Vegas by a security and DevOps engineer, on one conviction: businesses with sensitive data shouldn't have to send it to someone else's cloud to use AI.",
 };
 
 export const about = {
@@ -18,18 +18,19 @@ export const about = {
       "Tekton is a focused product company in pre-launch, built around a single conviction about where sensitive data belongs.",
   },
 
-  // intent: The founder narrative. Las Vegas / CISSP / DevOps angle. Real person,
+  // intent: The founder narrative. Las Vegas / DevOps angle. Real person,
   // no invented team. Photo is a placeholder (see TODO.md).
+  // NOTE: this section is temporarily not rendered on /about (see app/about/page.tsx).
   founder: {
     eyebrow: "Founder",
     name: "Founder", // TODO: replace with the founder's name.
-    role: "Founder · CISSP · Security & DevOps Engineer",
+    role: "Founder · Security & DevOps Engineer",
     location: "Las Vegas, Nevada",
     photoAlt: "Portrait of Tekton's founder", // TODO: add real founder photo.
     bio: [
-      "Tekton is built by a CISSP-credentialed security and DevOps engineer based in Las Vegas, with a career spent keeping production systems and sensitive data safe.",
+      "Tekton is built by a security and DevOps engineer based in Las Vegas, with a career spent keeping production systems and sensitive data safe.",
       "That background shapes the product. The people who handle other people's confidential information are held to a standard, and the tools they adopt should meet it — not quietly undercut it by shipping everything to a third-party model.",
-      "Tekton is the result: a defined product, with an architecture one person is willing to put their name and credential behind.",
+      "Tekton is the result: a defined product, with an architecture someone is willing to put their name behind.",
     ],
   },
 

@@ -27,7 +27,10 @@ export function Wordmark({ className }: { className?: string }) {
         className="h-7 w-auto shrink-0"
       >
         <rect x="0" y="0" width="240" height="40" fill="var(--accent-text)" />
-        <polygon points="55,80 110,112 110,260 55,226" fill="var(--accent-text)" />
+        <polygon
+          points="55,80 110,112 110,260 55,226"
+          fill="var(--accent-text)"
+        />
         <polygon points="185,80 130,112 130,260 185,226" fill="#6cae8e" />
       </svg>
       <span

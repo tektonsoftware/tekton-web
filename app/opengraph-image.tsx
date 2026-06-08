@@ -56,7 +56,7 @@ export default function OpengraphImage() {
         </div>
       </div>
       <div style={{ display: "flex", fontSize: 24, color: "#a2a8a3" }}>
-        On-premise · Verified citations · CISSP-led
+        On-premise · Verified citations · Audit-logged
       </div>
     </div>,
     { ...size }

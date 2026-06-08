@@ -21,45 +21,12 @@ export default function AboutPage() {
         subhead={about.hero.subhead}
       />
 
-      {/* FOUNDER — photo placeholder + bio. */}
-      <Section bordered>
-        <SectionReveal>
-          <div className="grid gap-10 lg:grid-cols-[280px_1fr] lg:gap-16">
-            <div>
-              {/*
-                Photo placeholder. No founder photo exists yet (see TODO.md).
-                When one lands, replace this block with:
-                  <Image src={founderPhoto} alt={about.founder.photoAlt}
-                         width={280} height={350} className="rounded-[var(--radius-base)]" />
-                Fixed aspect-ratio box keeps layout stable (no CLS) in the meantime.
-              */}
-              <div
-                className="border-border bg-muted text-muted-foreground flex aspect-[4/5] w-full items-center justify-center rounded-[var(--radius-base)] border border-dashed text-sm"
-                role="img"
-                aria-label={about.founder.photoAlt}
-              >
-                Founder photo
-              </div>
-              <p className="mt-4 font-semibold tracking-tight">
-                {about.founder.name}
-              </p>
-              <p className="text-accent-text text-sm">{about.founder.role}</p>
-              <p className="text-muted-foreground mt-1 text-sm">
-                {about.founder.location}
-              </p>
-            </div>
-
-            <div>
-              <SectionLabel>{about.founder.eyebrow}</SectionLabel>
-              <div className="mt-4 space-y-5 text-lg leading-relaxed">
-                {about.founder.bio.map((para) => (
-                  <p key={para}>{para}</p>
-                ))}
-              </div>
-            </div>
-          </div>
-        </SectionReveal>
-      </Section>
+      {/*
+        FOUNDER section temporarily removed.
+        The copy is preserved in content/about.ts (`about.founder`) and the full
+        markup is in git history — restore this block when the founder section
+        should reappear. See TODO.md.
+      */}
 
       {/* THESIS — why offline. Editorial serif accent on the heading. */}
       <Section surface="muted" bordered>

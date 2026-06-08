@@ -49,7 +49,7 @@ export const home = {
         name: "Tekton Shield",
         // intent: The reason a security reviewer signs off.
         summary:
-          "The compliance and audit layer: role-based access, complete audit logs, and an architecture review signed by a CISSP. Built so your auditors have less to ask about.",
+          "The compliance and audit layer: role-based access, complete audit logs, and a documented architecture review. Built so your auditors have less to ask about.",
         href: "/product#shield",
         featured: false,
       },
@@ -80,7 +80,7 @@ export const home = {
   // intent: Trust strip — four scannable proof points, no logos (we have none yet).
   trust: {
     items: [
-      { label: "CISSP-led architecture" },
+      { label: "Security-led architecture" },
       { label: "Runs fully on-premise" },
       { label: "Every action audit-logged" },
       { label: "SOC 2 in progress" },

@@ -77,14 +77,14 @@ export const product = {
       // intent: Shield's claim — the governance story a CISO needs to hear.
       claim:
         "The compliance and audit layer that lets your reviewers sign off.",
-      body: "Tekton Shield is the governance surface around the system: who can see what, what happened, and a record of it all. The architecture is reviewed and signed by a CISSP, and SOC 2 work is underway.",
+      body: "Tekton Shield is the governance surface around the system: who can see what, what happened, and a record of it all. The architecture has a documented review, and SOC 2 work is underway.",
       diagram: "shield",
       featured: false,
       capabilities: [
         "Role-based access control, integrated with your directory",
         "Complete, tamper-evident audit logs of every query and document touch",
         "Authentication via Active Directory / Microsoft Entra ID",
-        "CISSP-signed architecture review available under NDA",
+        "Documented architecture review available under NDA",
         "SOC 2 program in progress (see the Security page for current status)",
       ],
     },

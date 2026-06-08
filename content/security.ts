@@ -9,7 +9,7 @@
 export const securityMeta = {
   title: "Security",
   description:
-    "Tekton runs on-premise: nothing leaves your network. Encryption at rest and in transit, Active Directory / Entra authentication, full audit logging, and a CISSP-signed architecture review.",
+    "Tekton runs on-premise: nothing leaves your network. Encryption at rest and in transit, Active Directory / Entra authentication, full audit logging, and a documented architecture review.",
 };
 
 export const security = {
@@ -17,7 +17,7 @@ export const security = {
     eyebrow: "Security",
     headline: "Built for professionals who cannot afford to leak.",
     subhead:
-      "Tekton's security model is simple to state: your data stays on your network, every action is logged, and the architecture has been reviewed and signed by a CISSP. The details below are written for the person who has to approve it.",
+      "Tekton's security model is simple to state: your data stays on your network, every action is logged, and the architecture has a documented review you can evaluate. The details below are written for the person who has to approve it.",
     // intent: The artifact a reviewer takes into an internal meeting.
     onePager: {
       label: "Download security one-pager (PDF)",
@@ -80,11 +80,11 @@ export const security = {
     status: "In progress",
   },
 
-  // intent: Founder credibility — the CISSP signature is the trust anchor here.
+  // intent: Accountability — a documented review you can actually evaluate is the
+  // trust anchor here. (Founder-credential framing temporarily removed.)
   founder: {
     eyebrow: "Accountability",
-    heading: "A named, credentialed owner of the architecture.",
-    body: "Tekton's architecture was designed and is signed by its founder, a CISSP-credentialed security and DevOps engineer. The architecture review is available to evaluate under NDA — a real document with a name on it, not a badge on a page.",
-    cta: { label: "Read the founder's background", href: "/about" },
+    heading: "A named owner behind the architecture.",
+    body: "Tekton's architecture is designed and owned by a security and DevOps engineer, with a documented review available to evaluate under NDA — a real document, not a badge on a page.",
   },
 } as const;

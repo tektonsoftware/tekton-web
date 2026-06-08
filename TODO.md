@@ -18,10 +18,15 @@ Grouped by priority. File paths are clickable.
 - [ ] **Scheduler embed.** [app/demo/page.tsx](app/demo/page.tsx) has a placeholder
       where the Cal.com / Calendly embed goes. Paste the embed and remove the note
       (source text in [content/demo.ts](content/demo.ts)).
-- [ ] **Founder name + photo.** [content/about.ts](content/about.ts) uses "Founder"
-      as a placeholder name. Add the real name, and replace the photo placeholder in
-      [app/about/page.tsx](app/about/page.tsx) with a `next/image` (a code comment
-      there shows the exact swap). Drop the image in `public/`.
+- [ ] **Founder section (temporarily removed).** The founder block on `/about` is
+      currently not rendered (a restore marker sits in
+      [app/about/page.tsx](app/about/page.tsx); copy is preserved in
+      [content/about.ts](content/about.ts) `founder`, and the full markup is in git
+      history). To bring it back: restore the block, set the real founder name, and
+      replace the photo placeholder with a `next/image`. CISSP references were also
+      removed site-wide — re-add the credential wording here and in
+      [content/security.ts](content/security.ts) / [content/home.ts](content/home.ts)
+      / [content/product.ts](content/product.ts) if/when you want it back.
 - [ ] **Legal copy review.** `/privacy` and `/terms` now exist with **minimal
       placeholder copy that has NOT been reviewed by counsel**
       ([content/legal.ts](content/legal.ts), shown with an honest "not yet reviewed"
