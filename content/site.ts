@@ -1,8 +1,8 @@
 /**
  * Global site config — the single source of truth for company info, navigation,
- * the demo call-to-action, and SEO/structured-data strings.
+ * the contact call-to-action, home-page copy, and SEO/structured-data strings.
  *
- * Edit copy here, not in components. Every page imports from content/*.ts.
+ * The site is a single page (app/page.tsx). Edit copy here, not in components.
  */
 
 // intent: Public-facing site URL. Used for canonical URLs, sitemap, OG tags.
@@ -13,57 +13,38 @@ export const SITE_URL = (
 ).replace(/\/$/, "");
 
 export const site = {
-  // intent: The product/company name. Always paired with disambiguating context in
+  // intent: The company name. Always paired with disambiguating context in
   // <title> tags — never shipped as bare "Tekton" (CNCF trademark overlap).
   name: "Tekton",
   legalName: "Tekton",
 
   // intent: One-line elevator description, reused in meta + JSON-LD.
-  // Disambiguates aggressively from the CNCF Tekton CI/CD project.
+  // "Software company" + location disambiguates from the CNCF Tekton CI/CD project.
   description:
-    "Tekton is private, on-premise AI infrastructure for businesses with sensitive data. Every answer is grounded in your documents and cites a verified source — and nothing ever leaves your network.",
+    "Tekton is an independent software company based in Las Vegas, Nevada, building a family of focused products for businesses.",
 
-  // intent: Short tagline for the wordmark area / OG.
-  tagline: "Private AI for businesses with sensitive data.",
+  // intent: Short tagline for the footer / OG card.
+  tagline: "Focused software for serious work.",
 
   founderLocation: "Las Vegas, Nevada",
 
-  // intent: Public contact address. Surfaced in the footer, demo form fallbacks,
-  // and legal pages. Used as the mailto target everywhere we say "contact us".
+  // intent: Public contact address — the site's one conversion path.
   email: "contact@tektonsoftware.com",
 
-  // intent: Primary conversion action — repeated verbatim across the site.
+  // intent: Primary action — scrolls to the contact section.
   cta: {
-    label: "Book a 15-minute demo",
-    href: "/demo",
+    label: "Get in touch",
+    href: "/#contact",
   },
 
-  // intent: Closing CTA block in the global footer — last chance to convert.
-  // Restates the demo ask in plainer language than the hero.
-  footerCta: {
-    heading: "See it run on your own data.",
-    body: "Fifteen minutes, no slides. We'll show you verified, source-cited answers from documents like yours — running entirely offline.",
-  },
-
-  // intent: Top navigation order. Demo lives as the primary button, not a nav link.
+  // intent: In-page navigation. Each href is an anchor on the home page.
   nav: [
-    { label: "Product", href: "/product" },
-    { label: "Security", href: "/security" },
-    { label: "Pricing", href: "/pricing" },
-    { label: "About", href: "/about" },
+    { label: "Products", href: "/#products" },
+    { label: "Approach", href: "/#approach" },
+    { label: "Contact", href: "/#contact" },
   ],
 
-  // intent: Footer link groups. Keep terse and scannable.
   footer: {
-    product: [
-      { label: "Product overview", href: "/product" },
-      { label: "Security", href: "/security" },
-      { label: "Pricing", href: "/pricing" },
-    ],
-    company: [
-      { label: "About", href: "/about" },
-      { label: "Book a demo", href: "/demo" },
-    ],
     legal: [
       { label: "Privacy", href: "/privacy" },
       { label: "Terms", href: "/terms" },
@@ -73,4 +54,63 @@ export const site = {
   // intent: Used in JSON-LD Organization schema. No social accounts yet.
   // TODO: add sameAs URLs (LinkedIn, etc.) when accounts exist.
   sameAs: [] as string[],
+} as const;
+
+/** Home page copy, top to bottom. */
+export const home = {
+  hero: {
+    // Each segment renders in order; `mark: true` segments get the underline.
+    headline: [
+      { text: "Focused " },
+      { text: "software", mark: true },
+      { text: " for the work businesses " },
+      { text: "depend on", mark: true },
+    ],
+    body: "Tekton is an independent software company. We build a small family of products, and each one is designed to do one job exceptionally well.",
+  },
+
+  products: {
+    eyebrow: "Products",
+    heading: "One company. Several sharp tools.",
+    // TODO: replace the placeholder entry with real products as they're named.
+    items: [
+      {
+        name: "Tekton Private AI",
+        summary:
+          "On-premise AI for businesses with sensitive data. Answers cite a verified source, and nothing leaves your network.",
+        status: "Available",
+      },
+      {
+        name: "More in development",
+        summary:
+          "New products are on the way. Get in touch if you'd like to hear about them early.",
+        status: "Coming soon",
+      },
+    ],
+  },
+
+  approach: {
+    eyebrow: "Approach",
+    heading: "How we build.",
+    items: [
+      {
+        title: "Narrow by design",
+        body: "Every product has one clear job. We'd rather ship one tool that works than a platform that sort of does everything.",
+      },
+      {
+        title: "Built to last",
+        body: "Plain architecture, careful engineering, and no dependencies we can't stand behind. Software you can run for years.",
+      },
+      {
+        title: "Yours to control",
+        body: "Your data stays where you put it. Our products don't treat customer information as something to collect.",
+      },
+    ],
+  },
+
+  contact: {
+    eyebrow: "Contact",
+    heading: "Let's talk.",
+    body: "Questions about a product, a partnership, or something else entirely? Write to us and a person will reply.",
+  },
 } as const;

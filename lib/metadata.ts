@@ -29,7 +29,7 @@ export function buildMetadata({
     // (app/opengraph-image.tsx + app/twitter-image.tsx).
     openGraph: {
       type: "website",
-      siteName: "Tekton — Private AI",
+      siteName: "Tekton Software",
       title,
       description,
       url,
@@ -46,18 +46,17 @@ export function buildMetadata({
 export const rootMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Tekton — Private AI for Sensitive Data",
-    template: "%s · Tekton — Private AI",
+    default: "Tekton — Independent Software Company",
+    template: "%s · Tekton Software",
   },
   description: site.description,
-  applicationName: "Tekton — Private AI",
+  applicationName: "Tekton Software",
   keywords: [
+    "Tekton Software",
+    "software company",
+    "business software",
+    "Las Vegas software company",
     "private AI",
-    "on-premise AI",
-    "offline AI appliance",
-    "verified citations",
-    "data privacy",
-    "self-hosted AI",
   ],
   robots: { index: true, follow: true },
 };

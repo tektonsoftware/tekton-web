@@ -1,134 +1,104 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
-import { site } from "@/content/site";
-import { home, homeMeta } from "@/content/home";
+import { site, home } from "@/content/site";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/sections/Section";
 import { SectionLabel } from "@/components/SectionLabel";
 import { SectionReveal } from "@/components/SectionReveal";
-import { Card } from "@/components/ui/card";
 import { buttonVariants } from "@/components/ui/button";
-import { HowItWorksDiagram } from "@/components/diagrams/HowItWorksDiagram";
-import { Figure } from "@/components/diagrams/Figure";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = buildMetadata({
   // Absolute title — disambiguates Tekton on the home page, where the layout's
   // title template does not apply.
-  title: "Tekton — Private AI for Sensitive Data",
+  title: "Tekton — Independent Software Company",
   titleAbsolute: true,
-  description: homeMeta.description,
+  description: site.description,
   path: "/",
 });
 
 export default function HomePage() {
   return (
     <>
-      {/* HERO — one value prop, one primary CTA. The whole pitch in three lines. */}
-      <section className="border-border border-b py-20 sm:py-28 lg:py-32">
-        <Container className="max-w-4xl">
-          <SectionLabel>{home.hero.eyebrow}</SectionLabel>
-          <h1 className="mt-5 text-4xl font-semibold tracking-tight text-balance sm:text-6xl">
-            {/* Stack each "Your X." phrase on its own line so the anaphora reads
-                as a column and never breaks mid-phrase. The final phrase is
-                accent-colored to land the value prop. */}
-            {home.hero.headline.match(/[^.]+\./g)?.map((phrase, i, all) => (
-              <span
-                key={phrase}
-                className={cn("block", i === all.length - 1 && "text-accent-text")}
-              >
-                {phrase.trim()}
+      {/* HERO — bold sans headline left, serif statement right. */}
+      <section className="py-20 sm:py-28 lg:py-36">
+        <Container className="grid items-center gap-10 lg:grid-cols-[1.25fr_1fr] lg:gap-16">
+          <h1 className="text-5xl leading-[1.02] font-bold tracking-[-0.03em] sm:text-6xl lg:text-7xl">
+            {home.hero.headline.map((part) => (
+              <span key={part.text} className={cn("mark" in part && "mark")}>
+                {part.text}
               </span>
             ))}
           </h1>
-          <p className="text-muted-foreground mt-6 max-w-2xl text-lg leading-relaxed sm:text-xl">
-            {home.hero.subhead}
-          </p>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <Link
-              href={site.cta.href}
-              className={buttonVariants({ size: "lg" })}
-            >
-              {site.cta.label}
-            </Link>
-            <Link
-              href={home.hero.secondary.href}
-              className={buttonVariants({ variant: "outline", size: "lg" })}
-            >
-              {home.hero.secondary.label}
-            </Link>
+          <div>
+            <p className="font-serif text-xl leading-snug sm:text-2xl">
+              {home.hero.body}
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link
+                href={site.cta.href}
+                className={buttonVariants({ size: "lg" })}
+              >
+                {site.cta.label}
+              </Link>
+              <Link
+                href="/#products"
+                className={buttonVariants({ variant: "outline", size: "lg" })}
+              >
+                See our products
+              </Link>
+            </div>
           </div>
         </Container>
       </section>
 
-      {/* THREE-UP — Core / Verify / Shield. Verify is the featured (hero) pillar. */}
-      <Section>
+      {/* PRODUCTS — a ruled list, one row per product. */}
+      <Section id="products" bordered className="scroll-mt-16">
         <SectionReveal>
-          <div className="max-w-2xl">
-            <SectionLabel>{home.pillars.eyebrow}</SectionLabel>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
-              {home.pillars.heading}
-            </h2>
-          </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {home.pillars.items.map((pillar) => (
-              <Card
-                key={pillar.name}
-                className={cn(
-                  "flex flex-col p-7 transition-colors",
-                  pillar.featured && "border-accent ring-accent ring-1"
-                )}
+          <SectionLabel>{home.products.eyebrow}</SectionLabel>
+          <h2 className="mt-4 max-w-2xl text-3xl font-bold tracking-tight sm:text-5xl">
+            {home.products.heading}
+          </h2>
+          <ul className="border-foreground mt-12 border-t">
+            {home.products.items.map((product) => (
+              <li
+                key={product.name}
+                className="border-border grid gap-3 border-b py-8 sm:grid-cols-[1fr_1.5fr_8rem] sm:items-baseline sm:gap-8"
               >
-                {pillar.featured && (
-                  <span className="border-accent text-accent-text mb-3 inline-flex w-fit rounded-full border px-2.5 py-0.5 text-xs font-medium">
-                    Headline feature
-                  </span>
-                )}
-                <h3 className="text-lg font-semibold tracking-tight">
-                  {pillar.name}
+                <h3 className="text-xl font-semibold tracking-tight sm:text-2xl">
+                  {product.name}
                 </h3>
-                <p className="text-muted-foreground mt-3 flex-1 text-sm leading-relaxed">
-                  {pillar.summary}
+                <p className="text-muted-foreground font-serif text-lg leading-snug">
+                  {product.summary}
                 </p>
-                <Link
-                  href={pillar.href}
-                  className="text-accent-text focus-visible:outline-ring mt-5 inline-flex w-fit items-center gap-1 rounded-sm text-sm font-medium hover:underline focus-visible:outline-2 focus-visible:outline-offset-2"
-                >
-                  Learn more
-                  <span aria-hidden="true">&rarr;</span>
-                </Link>
-              </Card>
+                <span className="border-foreground w-fit rounded-[var(--radius-base)] border px-2.5 py-1 text-xs font-medium tracking-wide uppercase sm:justify-self-end">
+                  {product.status}
+                </span>
+              </li>
             ))}
-          </div>
+          </ul>
         </SectionReveal>
       </Section>
 
-      {/* HOW IT WORKS — three physical steps + schematic. */}
-      <Section surface="muted" bordered>
+      {/* APPROACH — three principles on a slightly deeper band. */}
+      <Section id="approach" surface="muted" bordered className="scroll-mt-16">
         <SectionReveal>
-          <div className="max-w-2xl">
-            <SectionLabel>{home.howItWorks.eyebrow}</SectionLabel>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
-              {home.howItWorks.heading}
-            </h2>
-          </div>
-
-          <Figure className="bg-card mt-12">
-            <HowItWorksDiagram />
-          </Figure>
-
-          <ol className="mt-12 grid gap-8 md:grid-cols-3">
-            {home.howItWorks.steps.map((step, i) => (
-              <li key={step.title}>
-                <div className="border-accent text-accent-text flex h-9 w-9 items-center justify-center rounded-full border text-sm font-semibold">
-                  {i + 1}
-                </div>
-                <h3 className="mt-4 font-semibold tracking-tight">
-                  {step.title}
+          <SectionLabel>{home.approach.eyebrow}</SectionLabel>
+          <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-5xl">
+            {home.approach.heading}
+          </h2>
+          <ol className="mt-12 grid gap-10 md:grid-cols-3">
+            {home.approach.items.map((item, i) => (
+              <li key={item.title} className="border-foreground border-t pt-5">
+                <span className="text-muted-foreground text-sm font-medium tabular-nums">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="mt-3 text-xl font-semibold tracking-tight">
+                  {item.title}
                 </h3>
-                <p className="text-muted-foreground mt-2 text-sm leading-relaxed">
-                  {step.body}
+                <p className="text-muted-foreground mt-2 font-serif text-lg leading-snug">
+                  {item.body}
                 </p>
               </li>
             ))}
@@ -136,23 +106,27 @@ export default function HomePage() {
         </SectionReveal>
       </Section>
 
-      {/* TRUST STRIP — four scannable proof points. No logos yet. */}
-      {/* TODO: real logos */}
-      <Section className="py-12 sm:py-14">
-        <ul className="grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-4">
-          {home.trust.items.map((item) => (
-            <li
-              key={item.label}
-              className="flex items-center gap-2.5 text-sm font-medium"
+      {/* CONTACT — the one conversion path: email. */}
+      <Section id="contact" bordered className="scroll-mt-16">
+        <SectionReveal className="grid gap-8 lg:grid-cols-[1.25fr_1fr] lg:items-end lg:gap-16">
+          <div>
+            <SectionLabel>{home.contact.eyebrow}</SectionLabel>
+            <h2 className="mt-4 text-5xl font-bold tracking-[-0.03em] sm:text-7xl">
+              {home.contact.heading}
+            </h2>
+          </div>
+          <div>
+            <p className="font-serif text-xl leading-snug">
+              {home.contact.body}
+            </p>
+            <a
+              href={`mailto:${site.email}`}
+              className="mark focus-visible:outline-ring mt-6 inline-block rounded-sm text-xl font-semibold break-all focus-visible:outline-2 focus-visible:outline-offset-4 sm:text-2xl"
             >
-              <span
-                aria-hidden="true"
-                className="bg-accent-text inline-block h-1.5 w-1.5 shrink-0 rounded-full"
-              />
-              {item.label}
-            </li>
-          ))}
-        </ul>
+              {site.email}
+            </a>
+          </div>
+        </SectionReveal>
       </Section>
     </>
   );

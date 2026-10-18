@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { site } from "@/content/site";
 import { Container } from "@/components/layout/Container";
 import { Wordmark } from "@/components/Wordmark";
@@ -11,11 +10,11 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export function Header() {
-  const pathname = usePathname();
   const [open, setOpen] = React.useState(false);
 
-  // Close the mobile menu on navigation.
-  React.useEffect(() => setOpen(false), [pathname]);
+  // Nav items are in-page anchors, so the route never changes — close the
+  // mobile menu on link click instead of on navigation.
+  const close = () => setOpen(false);
 
   return (
     <header className="border-border bg-background/85 sticky top-0 z-50 border-b backdrop-blur-sm">
@@ -26,27 +25,19 @@ export function Header() {
         >
           <Wordmark />
 
-          {/* Desktop nav */}
-          <div className="hidden items-center gap-1 md:flex">
-            {site.nav.map((item) => {
-              const active = pathname === item.href;
-              return (
+          <div className="flex items-center gap-2">
+            {/* Desktop nav */}
+            <div className="hidden items-center gap-1 md:flex">
+              {site.nav.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  aria-current={active ? "page" : undefined}
-                  className={cn(
-                    "hover:bg-muted focus-visible:outline-ring rounded-[var(--radius-base)] px-3 py-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2",
-                    active ? "text-foreground" : "text-muted-foreground"
-                  )}
+                  className="text-foreground hover:bg-muted focus-visible:outline-ring rounded-[var(--radius-base)] px-3 py-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2"
                 >
                   {item.label}
                 </Link>
-              );
-            })}
-          </div>
-
-          <div className="flex items-center gap-2">
+              ))}
+            </div>
             <ThemeToggle />
             <Link
               href={site.cta.href}
@@ -94,6 +85,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
+                onClick={close}
                 className="text-foreground hover:bg-muted focus-visible:outline-ring rounded-[var(--radius-base)] px-3 py-2 text-sm focus-visible:outline-2 focus-visible:outline-offset-2"
               >
                 {item.label}
@@ -101,6 +93,7 @@ export function Header() {
             ))}
             <Link
               href={site.cta.href}
+              onClick={close}
               className={cn(buttonVariants(), "mt-2 w-full")}
             >
               {site.cta.label}

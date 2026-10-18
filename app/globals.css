@@ -2,62 +2,63 @@
 
 /*
   Tekton design system — Tailwind v4, CSS-first.
-  Restrained, type-led, B2B. One accent (deep forest), neutral warm base.
-  Dark mode is a designed palette, not an inversion.
+  Sharp and type-led: a deep warm-beige ground, near-black ink, no color accent.
+  The "accent" is the ink itself, so primary actions read black-on-beige.
+  Dark mode is a designed palette (warm charcoal + beige ink), not an inversion.
 */
 
 /* Enable class-based dark mode (next-themes adds .dark on <html>). */
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  /* Warm off-white base + warm near-black ink. */
-  --background: #faf9f6;
-  --foreground: #1a1c1a;
+  /* Deep warm beige + warm near-black ink. */
+  --background: #e3dccf;
+  --foreground: #141413;
 
-  --muted: #f0eee8;
-  --muted-foreground: #565a55;
+  --muted: #d8d0c1;
+  --muted-foreground: #4a463f;
 
-  --card: #ffffff;
-  --card-foreground: #1a1c1a;
+  --card: #ebe6dc;
+  --card-foreground: #141413;
 
-  --border: #e4e1d9;
-  --input: #d8d4ca;
-  --ring: #1f3d32;
+  --border: #c4baa7;
+  --input: #a99f8c;
+  --ring: #141413;
 
-  /* Accent = deep forest. -text adapts per mode for AA contrast. */
-  --accent: #1f3d32;
-  --accent-foreground: #fbfdfb;
-  --accent-text: #1f3d32;
-  --accent-hover: #173026;
+  /* Accent = ink. -text is ink-colored text on the normal ground. */
+  --accent: #141413;
+  --accent-foreground: #f0ede6;
+  --accent-text: #141413;
+  --accent-hover: #34322e;
 
   /* Schematic line-diagram strokes/fills. */
-  --diagram: #1f3d32;
-  --diagram-muted: #e7efe9;
-  --diagram-line: #c9c5bb;
+  --diagram: #141413;
+  --diagram-muted: #d8d0c1;
+  --diagram-line: #b3a994;
 }
 
 .dark {
-  --background: #0e100f;
-  --foreground: #e9ebe8;
+  --background: #141413;
+  --foreground: #e8e3d8;
 
-  --muted: #1a1d1b;
-  --muted-foreground: #a2a8a3;
+  --muted: #1e1d1b;
+  --muted-foreground: #a8a296;
 
-  --card: #161917;
-  --card-foreground: #e9ebe8;
+  --card: #1b1a18;
+  --card-foreground: #e8e3d8;
 
-  --border: #2a2e2b;
-  --input: #353a36;
-  --ring: #6cae8e;
+  --border: #33312d;
+  --input: #46433d;
+  --ring: #e8e3d8;
 
-  --accent: #2f5e4c;
-  --accent-foreground: #f4faf6;
-  --accent-text: #6cae8e;
-  --accent-hover: #387055;
+  --accent: #e8e3d8;
+  --accent-foreground: #141413;
+  --accent-text: #e8e3d8;
+  --accent-hover: #d2ccbf;
 
-  --diagram: #6cae8e;
-  --diagram-muted: #1c2a23;
-  --diagram-line: #3a3f3b;
+  --diagram: #e8e3d8;
+  --diagram-muted: #24221f;
+  --diagram-line: #46433d;
 }
 
 /* Map design tokens to Tailwind theme so utilities like bg-background work. */
@@ -82,7 +83,7 @@
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-newsreader), ui-serif, Georgia, serif;
 
-  --radius-base: 0.5rem;
+  --radius-base: 0.25rem;
 }
 
 @layer base {
@@ -111,7 +112,8 @@
   }
 
   ::selection {
-    background-color: color-mix(in srgb, var(--accent) 22%, transparent);
+    background-color: var(--foreground);
+    color: var(--background);
   }
 
   h1,
@@ -132,7 +134,15 @@
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--accent-text);
+  color: var(--muted-foreground);
+}
+
+/* Ink underline for emphasized words in display headlines. */
+.mark {
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.07em;
+  text-underline-offset: 0.12em;
+  text-decoration-skip-ink: none;
 }
 
 /* Minimal section-reveal animation, disabled for reduced-motion users. */
