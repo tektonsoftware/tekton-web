@@ -43,38 +43,35 @@ export default function HomePage() {
                 {site.cta.label}
               </Link>
               <Link
-                href="/#products"
+                href="/#what-we-do"
                 className={buttonVariants({ variant: "outline", size: "lg" })}
               >
-                See our products
+                What we do
               </Link>
             </div>
           </div>
         </Container>
       </section>
 
-      {/* PRODUCTS — a ruled list, one row per product. */}
-      <Section id="products" bordered className="scroll-mt-16">
+      {/* WHAT WE DO — a ruled list of the kinds of products we build. */}
+      <Section id="what-we-do" bordered className="scroll-mt-16">
         <SectionReveal>
-          <SectionLabel>{home.products.eyebrow}</SectionLabel>
+          <SectionLabel>{home.whatWeDo.eyebrow}</SectionLabel>
           <h2 className="mt-4 max-w-2xl text-3xl font-bold tracking-tight sm:text-5xl">
-            {home.products.heading}
+            {home.whatWeDo.heading}
           </h2>
           <ul className="border-foreground mt-12 border-t">
-            {home.products.items.map((product) => (
+            {home.whatWeDo.items.map((item) => (
               <li
-                key={product.name}
-                className="border-border grid gap-3 border-b py-8 sm:grid-cols-[1fr_1.5fr_8rem] sm:items-baseline sm:gap-8"
+                key={item.title}
+                className="border-border grid gap-3 border-b py-8 sm:grid-cols-[1fr_1.5fr] sm:items-baseline sm:gap-8"
               >
                 <h3 className="text-xl font-semibold tracking-tight sm:text-2xl">
-                  {product.name}
+                  {item.title}
                 </h3>
                 <p className="text-muted-foreground font-serif text-lg leading-snug">
-                  {product.summary}
+                  {item.body}
                 </p>
-                <span className="border-foreground w-fit rounded-[var(--radius-base)] border px-2.5 py-1 text-xs font-medium tracking-wide uppercase sm:justify-self-end">
-                  {product.status}
-                </span>
               </li>
             ))}
           </ul>

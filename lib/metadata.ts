@@ -56,7 +56,7 @@ export const rootMetadata: Metadata = {
     "software company",
     "business software",
     "Las Vegas software company",
-    "private AI",
+    "software products",
   ],
   robots: { index: true, follow: true },
 };

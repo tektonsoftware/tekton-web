@@ -39,7 +39,7 @@ export const site = {
 
   // intent: In-page navigation. Each href is an anchor on the home page.
   nav: [
-    { label: "Products", href: "/#products" },
+    { label: "What we do", href: "/#what-we-do" },
     { label: "Approach", href: "/#approach" },
     { label: "Contact", href: "/#contact" },
   ],
@@ -69,22 +69,23 @@ export const home = {
     body: "Tekton is an independent software company. We build a small family of products, and each one is designed to do one job exceptionally well.",
   },
 
-  products: {
-    eyebrow: "Products",
+  whatWeDo: {
+    eyebrow: "What we do",
     heading: "One company. Several sharp tools.",
-    // TODO: replace the placeholder entry with real products as they're named.
+    // intent: The kinds of products Tekton builds — deliberately general, no
+    // product names. Adjust as the product line takes shape.
     items: [
       {
-        name: "Tekton Private AI",
-        summary:
-          "On-premise AI for businesses with sensitive data. Answers cite a verified source, and nothing leaves your network.",
-        status: "Available",
+        title: "Business software",
+        body: "Tools for the everyday operations of small and growing businesses, built around how the work actually gets done.",
       },
       {
-        name: "More in development",
-        summary:
-          "New products are on the way. Get in touch if you'd like to hear about them early.",
-        status: "Coming soon",
+        title: "Web applications",
+        body: "Fast, dependable software that runs in the browser, so there's nothing to install and it works wherever your team does.",
+      },
+      {
+        title: "Automation",
+        body: "Products that take repetitive work off people's plates and handle it quietly and reliably in the background.",
       },
     ],
   },
