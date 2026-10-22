@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
 import { site } from "@/content/site";
+import { TK_PATH, TK_VIEWBOX } from "@/components/Wordmark";
 
 // Branded OG card, generated at build into a static image. Applies site-wide.
 export const alt = "Tekton — Independent Software Company";
@@ -23,12 +24,27 @@ export default function OpengraphImage() {
       <div
         style={{
           display: "flex",
-          fontSize: 40,
-          fontWeight: 800,
+          alignItems: "center",
+          gap: 22,
           color: "#141413",
         }}
       >
-        Tekton
+        <svg viewBox={TK_VIEWBOX} width={132} height={54} fill="#141413">
+          <path d={TK_PATH} />
+        </svg>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            fontSize: 22,
+            fontWeight: 600,
+            letterSpacing: "0.22em",
+            lineHeight: 1.25,
+          }}
+        >
+          <span>TEKTON</span>
+          <span>SOFTWARE</span>
+        </div>
       </div>
       <div style={{ display: "flex", flexDirection: "column" }}>
         <div

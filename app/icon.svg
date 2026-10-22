@@ -1,7 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-labelledby="title">
-  <title>Tekton favicon mark</title>
-  
-  <rect x="12" y="10" width="40" height="7" fill="#141413"/>
-  <polygon points="21,24 30,29 30,54 21,49" fill="#141413"/>
-  <polygon points="43,24 34,29 34,54 43,49" fill="#141413"/>
+  <title>Tekton Software favicon mark</title>
+  <rect width="64" height="64" fill="#141413"/>
+  <path transform="translate(10 23) scale(0.17985)" fill="#e3dccf" d="M0,0 H117.5 L105.26,21.2 H12.24 Z M45.35,21.19 H72.15 V100 H45.35 Z M123.5,0 H150.3 V100 H123.5 Z M151.1,48.2 L204.63,0 H240.65 L187.12,48.2 L244.65,100 H208.63 Z"/>
 </svg>

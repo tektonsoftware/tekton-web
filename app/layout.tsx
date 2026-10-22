@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
-import { Newsreader, Inter } from "next/font/google";
+import { Newsreader } from "next/font/google";
 import "./globals.css";
 import { SITE_URL, site } from "@/content/site";
 import { rootMetadata } from "@/lib/metadata";
@@ -14,14 +14,6 @@ const newsreader = Newsreader({
   variable: "--font-newsreader",
   display: "swap",
   style: ["normal", "italic"],
-});
-
-// Logo wordmark only — the brand lockup is set in Inter 800 (see components/Wordmark).
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  weight: ["800"],
-  display: "swap",
 });
 
 export const metadata: Metadata = rootMetadata;
@@ -49,7 +41,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${GeistSans.variable} ${newsreader.variable} ${inter.variable}`}
+      className={`${GeistSans.variable} ${newsreader.variable}`}
       suppressHydrationWarning
     >
       <body className="flex min-h-screen flex-col">
