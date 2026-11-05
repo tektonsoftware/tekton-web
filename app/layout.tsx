@@ -28,10 +28,6 @@ const organizationJsonLd = {
   url: SITE_URL,
   description: site.description,
   slogan: site.tagline,
-  foundingLocation: {
-    "@type": "Place",
-    name: site.founderLocation,
-  },
   sameAs: site.sameAs,
 };
 

@@ -19,14 +19,13 @@ export const site = {
   legalName: "Tekton",
 
   // intent: One-line elevator description, reused in meta + JSON-LD.
-  // "Software company" + location disambiguates from the CNCF Tekton CI/CD project.
+  // "Software company" disambiguates from the CNCF Tekton CI/CD project.
+  // Deliberately no city or state: the company's location is not published.
   description:
-    "Tekton is an independent software company based in Las Vegas, Nevada, building a family of focused products for businesses.",
+    "Tekton is an independent software company building a family of focused products for businesses.",
 
   // intent: Short tagline for the footer / OG card.
   tagline: "Focused software for serious work.",
-
-  founderLocation: "Las Vegas, Nevada",
 
   // intent: Public contact address — the site's one conversion path.
   email: "contact@tektonsoftware.com",

@@ -40,7 +40,6 @@ export function Footer() {
         <p>
           &copy; {COPYRIGHT_YEAR} {site.legalName}. All rights reserved.
         </p>
-        <p>{site.founderLocation}</p>
       </Container>
     </footer>
   );

@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { site } from "@/content/site";
+import { SITE_URL, site } from "@/content/site";
 import { TK_PATH, TK_VIEWBOX } from "@/components/Wordmark";
 
 // Branded OG card, generated at build into a static image. Applies site-wide.
@@ -70,7 +70,7 @@ export default function OpengraphImage() {
         </div>
       </div>
       <div style={{ display: "flex", fontSize: 24, color: "#4a463f" }}>
-        {site.founderLocation}
+        {new URL(SITE_URL).host}
       </div>
     </div>,
     { ...size }
