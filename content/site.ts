@@ -6,17 +6,19 @@
  */
 
 // intent: Public-facing site URL. Used for canonical URLs, sitemap, OG tags.
-// Override with NEXT_PUBLIC_SITE_URL in Vercel if the production domain changes
-// (e.g. to a www. or apex variant).
+// Vercel serves the site on www and redirects the apex domain to it, so the
+// default is the www host. Override with NEXT_PUBLIC_SITE_URL if that changes.
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://tektonsoftware.com"
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.tektonsoftware.com"
 ).replace(/\/$/, "");
 
 export const site = {
   // intent: The company name. Always paired with disambiguating context in
   // <title> tags — never shipped as bare "Tekton" (CNCF trademark overlap).
   name: "Tekton",
-  legalName: "Tekton",
+  // intent: The registered company, shown in the footer copyright, the legal
+  // pages and the JSON-LD Organization schema.
+  legalName: "Tekton Software LLC",
 
   // intent: One-line elevator description, reused in meta + JSON-LD.
   // "Software company" disambiguates from the CNCF Tekton CI/CD project.
@@ -43,16 +45,53 @@ export const site = {
     { label: "Contact", href: "/#contact" },
   ],
 
+  // intent: Footer link columns. External links (products) open in the same tab.
   footer: {
-    legal: [
-      { label: "Privacy", href: "/privacy" },
-      { label: "Terms", href: "/terms" },
+    columns: [
+      {
+        heading: "Products",
+        links: [{ label: "SigDek", href: "https://sigdek.com" }],
+      },
+      {
+        heading: "Company",
+        links: [
+          { label: "What we do", href: "/#what-we-do" },
+          { label: "Approach", href: "/#approach" },
+          { label: "Contact", href: "/#contact" },
+          { label: "Security", href: "/security" },
+        ],
+      },
+      {
+        heading: "Legal",
+        links: [
+          { label: "Privacy", href: "/privacy" },
+          { label: "Terms", href: "/terms" },
+        ],
+      },
     ],
   },
 
-  // intent: Used in JSON-LD Organization schema. No social accounts yet.
-  // TODO: add sameAs URLs (LinkedIn, etc.) when accounts exist.
-  sameAs: [] as string[],
+  // intent: Official social accounts. Rendered as one-color icons in the
+  // footer and listed in the JSON-LD Organization schema (sameAs). `icon`
+  // keys map to paths in components/SocialIcon.tsx.
+  socials: [
+    {
+      label: "GitHub",
+      href: "https://github.com/tektonsoftware",
+      icon: "github",
+    },
+    {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/company/tektonsoftware/",
+      icon: "linkedin",
+    },
+    {
+      label: "Instagram",
+      href: "https://www.instagram.com/tekton.software/",
+      icon: "instagram",
+    },
+    { label: "X", href: "https://x.com/tektonsoftware", icon: "x" },
+  ],
 } as const;
 
 /** Home page copy, top to bottom. */

@@ -6,8 +6,6 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      // The only non-static route; nothing to index there.
-      disallow: "/api/",
     },
     sitemap: `${SITE_URL}/sitemap.xml`,
     host: SITE_URL,

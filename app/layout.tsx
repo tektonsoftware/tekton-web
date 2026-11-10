@@ -23,12 +23,14 @@ export const metadata: Metadata = rootMetadata;
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: site.name,
+  name: "Tekton Software",
   legalName: site.legalName,
   url: SITE_URL,
+  logo: `${SITE_URL}/apple-icon.png`,
+  email: site.email,
   description: site.description,
   slogan: site.tagline,
-  sameAs: site.sameAs,
+  sameAs: site.socials.map((social) => social.href),
 };
 
 export default function RootLayout({
