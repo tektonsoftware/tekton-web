@@ -65,7 +65,7 @@ export const privacy = {
     },
     {
       title: "Our products",
-      body: "Each of our products has its own privacy policy, covering what that product collects. SigDek's is at https://sigdek.com/privacy.",
+      body: "This policy covers this website only. Where one of our products has its own privacy policy, that policy covers the product.",
     },
     {
       title: "Changes",
@@ -94,8 +94,8 @@ export const terms = {
       body: "To the extent the law allows, we aren't liable for damages arising from your use of this website.",
     },
     {
-      title: "Our products have their own terms",
-      body: "Using one of our products is governed by that product's terms, not these. SigDek's are at https://sigdek.com/terms.",
+      title: "Our products",
+      body: "These terms cover this website only. Where one of our products has its own terms, those govern its use.",
     },
     {
       title: "Other websites",
@@ -131,7 +131,7 @@ export const security = {
     },
     {
       title: "Our products",
-      body: "SigDek has its own security page, which explains how it protects your team's data and where to send reports about it: https://sigdek.com/security.",
+      body: "Reports about any of our products are welcome at the same address. Where a product's website lists its own security contact, you can use that instead.",
     },
     {
       title: "Machine-readable contact",

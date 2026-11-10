@@ -46,13 +46,9 @@ export const site = {
     { label: "Contact", href: "/#contact" },
   ],
 
-  // intent: Footer link columns. External links (products) open in the same tab.
+  // intent: Footer link columns. External links open in the same tab.
   footer: {
     columns: [
-      {
-        heading: "Products",
-        links: [{ label: "SigDek", href: "https://sigdek.com" }],
-      },
       {
         heading: "Company",
         links: [

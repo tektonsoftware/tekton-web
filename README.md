@@ -39,7 +39,7 @@ app/        routes (/, /security, /privacy, /terms), sitemap, robots, icons,
 components/ chrome (Header, Footer), ui/ primitives, sections/, SocialIcon
 content/    all copy and config (site.ts, legal.ts)
 lib/        cn() and metadata helpers
-public/     .well-known/security.txt, brand/ (logo files)
+public/     .well-known/security.txt
 ```
 
 ## Verify

@@ -10,7 +10,7 @@ const linkClass =
 export function Footer() {
   return (
     <footer className="border-border border-t">
-      <Container className="grid gap-12 py-14 lg:grid-cols-[1.2fr_2fr] lg:gap-16">
+      <Container className="grid gap-12 py-14 md:grid-cols-[1.4fr_1fr] md:gap-16">
         {/* Brand: lockup, tagline, email, social accounts. */}
         <div>
           <Wordmark />
@@ -41,10 +41,7 @@ export function Footer() {
         </div>
 
         {/* Link columns. */}
-        <nav
-          aria-label="Footer"
-          className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3"
-        >
+        <nav aria-label="Footer" className="grid grid-cols-2 gap-x-8 gap-y-10">
           {site.footer.columns.map((column) => (
             <div key={column.heading}>
               <h2 className="section-label">{column.heading}</h2>

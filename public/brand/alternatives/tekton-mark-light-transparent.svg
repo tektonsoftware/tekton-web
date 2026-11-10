@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title">
-  <title>Tekton geometric mark, light theme, transparent background</title>
-  
-  <g transform="translate(96 66) scale(1.3333)" opacity="1.0">
-    <rect x="0" y="0" width="240" height="40" fill="#1f3d32"/>
-    <polygon points="55,80 110,112 110,260 55,226" fill="#1f3d32"/>
-    <polygon points="185,80 130,112 130,260 185,226" fill="#6cae8e"/>
-  </g>
-</svg>

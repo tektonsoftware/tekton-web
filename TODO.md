@@ -23,8 +23,8 @@ Open items for tektonsoftware.com. File paths are clickable.
 
 ## Later
 
-- [ ] **Products on the home page.** The footer links SigDek; the home page copy
-      stays general for now (decision of 10 November 2026).
+- [ ] **Products on the site.** The site names no product, footer included
+      (Jay's decision, 10 November 2026). Revisit if that changes.
 - [ ] **Hosting.** The site runs on Vercel; Tekton's standard stack is Cloudflare.
       No visitor-facing reason to move yet.
 - [ ] **Bump `COPYRIGHT_YEAR`** in [components/layout/Footer.tsx](components/layout/Footer.tsx)
