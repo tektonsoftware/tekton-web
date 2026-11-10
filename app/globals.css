@@ -30,11 +30,6 @@
   --accent-foreground: #f0ede6;
   --accent-text: #141413;
   --accent-hover: #34322e;
-
-  /* Schematic line-diagram strokes/fills. */
-  --diagram: #141413;
-  --diagram-muted: #d8d0c1;
-  --diagram-line: #b3a994;
 }
 
 .dark {
@@ -55,10 +50,6 @@
   --accent-foreground: #141413;
   --accent-text: #e8e3d8;
   --accent-hover: #d2ccbf;
-
-  --diagram: #e8e3d8;
-  --diagram-muted: #24221f;
-  --diagram-line: #46433d;
 }
 
 /* Map design tokens to Tailwind theme so utilities like bg-background work. */
@@ -76,9 +67,6 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-accent-text: var(--accent-text);
   --color-accent-hover: var(--accent-hover);
-  --color-diagram: var(--diagram);
-  --color-diagram-muted: var(--diagram-muted);
-  --color-diagram-line: var(--diagram-line);
 
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-newsreader), ui-serif, Georgia, serif;

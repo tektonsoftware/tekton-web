@@ -3,11 +3,12 @@ import { join } from "node:path";
 import { ImageResponse } from "next/og";
 import { SITE_URL, site } from "@/content/site";
 import { TK_PATH, TK_VIEWBOX } from "@/components/Wordmark";
+import { OG_ALT } from "@/lib/metadata";
 
 // Link-preview card, generated at build into a static PNG. Applies site-wide
 // (twitter-image.tsx re-exports it). Same palette and type as the site: beige
 // ground, ink, Geist, ruled layout, tracked caps.
-export const alt = "Tekton Software: focused software for serious work";
+export const alt = OG_ALT;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -48,7 +49,7 @@ export default async function OpengraphImage() {
           display: "flex",
           fontSize: 84,
           fontWeight: 700,
-          letterSpacing: "-0.03em",
+          letterSpacing: -2.5,
           lineHeight: 1.02,
           maxWidth: 900,
         }}

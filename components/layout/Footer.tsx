@@ -68,8 +68,8 @@ export function Footer() {
         </nav>
       </Container>
 
-      <Container className="border-border text-muted-foreground border-t py-6 text-sm">
-        <p>
+      <Container className="text-muted-foreground pb-8 text-sm">
+        <p className="border-border border-t pt-6">
           &copy; {COPYRIGHT_YEAR} {site.legalName}. All rights reserved.
         </p>
       </Container>

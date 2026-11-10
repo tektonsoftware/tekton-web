@@ -41,7 +41,7 @@ export const privacy = {
   sections: [
     {
       title: "What this website collects",
-      body: "Nothing on its own. The site has no forms or accounts, sets no cookies, and runs no advertising or analytics trackers. Its fonts and images are served from this site, so your browser doesn't contact another company to show it.",
+      body: "Nothing on its own. The site has no forms or accounts, sets no cookies, and runs no advertising or analytics trackers. Its fonts and images are served from this site, so your browser makes no requests to any other website to show it.",
     },
     {
       title: "Your theme choice",

@@ -12,8 +12,8 @@ import { cn } from "@/lib/utils";
 export function Header() {
   const [open, setOpen] = React.useState(false);
 
-  // Nav items are in-page anchors, so the route never changes — close the
-  // mobile menu on link click instead of on navigation.
+  // Nav items are home-page anchors; from the home page the route doesn't
+  // change, so close the mobile menu on link click rather than on navigation.
   const close = () => setOpen(false);
 
   return (

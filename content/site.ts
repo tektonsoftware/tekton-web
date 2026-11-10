@@ -2,7 +2,8 @@
  * Global site config — the single source of truth for company info, navigation,
  * the contact call-to-action, home-page copy, and SEO/structured-data strings.
  *
- * The site is a single page (app/page.tsx). Edit copy here, not in components.
+ * The home page (app/page.tsx) is one page of anchored sections; policy page
+ * copy is in content/legal.ts. Edit copy here, not in components.
  */
 
 // intent: Public-facing site URL. Used for canonical URLs, sitemap, OG tags.

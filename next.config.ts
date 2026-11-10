@@ -27,7 +27,6 @@ const CSP = [
   "base-uri 'self'",
   "form-action 'self'",
   "frame-ancestors 'none'",
-  "upgrade-insecure-requests",
 ].join("; ");
 
 // HSTS is set by Vercel (max-age=63072000), so it isn't repeated here.
