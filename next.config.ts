@@ -29,7 +29,7 @@ const CSP = [
   "frame-ancestors 'none'",
 ].join("; ");
 
-// HSTS is set by Vercel (max-age=63072000), so it isn't repeated here.
+// HSTS is already set by the host (max-age=63072000), so it isn't repeated here.
 const securityHeaders = [
   { key: "Content-Security-Policy", value: CSP },
   { key: "X-Content-Type-Options", value: "nosniff" },

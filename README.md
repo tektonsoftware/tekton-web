@@ -12,7 +12,6 @@ The company site for Tekton Software LLC, live at https://www.tektonsoftware.com
 - **Geist** (sans) and **Newsreader** (serif), self-hosted via `next/font`
 - Light and dark themes via **next-themes** (a designed dark palette, not an inversion)
 - All copy in [`content/*.ts`](content/); see [CONTENT.md](CONTENT.md)
-- Hosted on **Vercel**
 
 ## Develop
 
@@ -55,5 +54,5 @@ and dark, and confirm the browser console shows no CSP errors. Old URLs
 
 ## Deploy
 
-Every push to `main` deploys to production on Vercel; branches and pull requests
-get preview URLs. Pushing to `main` needs Jay's go-ahead.
+Every push to `main` deploys to production; branches and pull requests get
+preview URLs. Pushing to `main` needs explicit approval.

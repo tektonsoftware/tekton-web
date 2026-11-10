@@ -7,7 +7,7 @@
  */
 
 // intent: Public-facing site URL. Used for canonical URLs, sitemap, OG tags.
-// Vercel serves the site on www and redirects the apex domain to it, so the
+// The host serves the site on www and redirects the apex domain to it, so the
 // default is the www host. Override with NEXT_PUBLIC_SITE_URL if that changes.
 export const SITE_URL = (
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.tektonsoftware.com"

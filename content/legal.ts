@@ -49,7 +49,7 @@ export const privacy = {
     },
     {
       title: "Hosting",
-      body: "The site is hosted by Vercel, which processes request details, such as your IP address and browser user agent, to serve and protect the site.",
+      body: "Our hosting provider processes request details, such as your IP address and browser user agent, to serve and protect the site.",
     },
     {
       title: "Email you send us",
